@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>100시간 웹사이트</title>
+  <style>
+    /* 전체 컨테이너 및 제목 스타일 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    h3 {
+      margin-top: 30px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    /* 버튼 스타일 */
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .button-row {
+      margin-bottom: 15px;
+    }
+
+    .buttons button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+      margin: 5px;
+    }
+
+    .buttons button:hover {
+      background-color: #2f8633;
+    }
+    
+    .buttons1 button {
+      background-color: #d25719; /* 기본 색 */
+      color: white;
+    }
+
+    .buttons1 button:hover {
+      background-color: #913000; /* hover 시 색 */
+    }
+    /* 이미지 섹션 */
+    .main-image-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin: 30px 0;
+    }
+
+    .main-image {
+      width: 100%;
+      max-width: 1000px;
+      height: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-left: 20px;
+    }
+
+    /* 이미지 갤러리 */
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .image-gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* 일정표 */
+    .schedule {
+      margin: 40px auto;
+      text-align: left;
+      max-width: 600px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .schedule h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .schedule ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .schedule li {
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+
+    }
+  </style>
+</head>
+<body>
+  <!-- 학교 메인 이미지 -->
+  <!-- 학교 소개: 텍스트 왼쪽 + 이미지 오른쪽 -->
+<div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 40px;">
+  <!-- 설명 텍스트 -->
+  <div style="max-width: 400px; text-align: left;">
+    <h3>괴산고등학교 설명</h3>
+    <p>괴산고등학교는 충청북도 괴산군에 위치한 고등학교로,<br>1964년에 설립되었습니다.</p>
+  </div>
+
+  <!-- 이미지 -->
+  <img src="괴산고등학교 이미지 1.png" alt="괴산고등학교 전경" class="main-image">
+</div>
+
+
+  <h1>괴산고등학교</h1>
+
+  <!-- 버튼들 -->
+  <div class="buttons">
+    <div>
+      <button onclick="window.open('https://school.cbe.go.kr/goesan-h', '_blank')">괴산고 홈페이지</button>
+      <button onclick="window.open('https://www.youtube.com/@%EA%B4%B4%EC%82%B0%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90%EB%98%90%EB%B0%94%EA%B8%B0','_blank')">괴산고 또바기 유튜브</button>
+      <button onclick="window.open('https://www.instagram.com/gshs_19604/?hl=ko','_blank')">괴산고 인스타그램</button>
+      <button onclick="window.open('https://m.blog.naver.com/PostList.naver?blogId=goesan_hs&tab=1','_blank')">괴산고 네이버 블로그</button>
+      <button onclick="window.open('https://open.kakao.com/o/gZvFu8jh','_blank')">괴산고 전체 톡방</button>
+    </div>
+
+    <div class="buttons1">
+      <button onclick="window.open('https://www.youtube.com/@ADAM-y8e6z','_blank')">ADAM 유튜브</button>
+      <button onclick="window.open('https://www.instagram.com/band_adam/?hl=ko','_blank')">ADAM 인스타</button>
+      <button onclick="window.open('https://www.instagram.com/goesango_midanok/')">미단옥 인스타</button>
+    </div>
+  </div>
+
+  <!-- 이미지 갤러리 -->
+  <div class="image-gallery">
+    <img src="image0.jpeg" alt="교내 행사 이미지 0">
+    <img src="image1.jpeg" alt="교내 행사 이미지 1">
+    <img src="image2.jpeg" alt="교내 행사 이미지 2">
+    <img src="image4.jpeg" alt="교내 행사 이미지 4">
+  </div>
+
+  <!-- 일정표 -->
+  <div class="schedule">
+    <h2>2025년 연간 일정표</h2>
+    <ul>
+      <li>6월 30일 ~ 7월 3일: 1학기 기말고사</li>
+      <li>7월 10일: 3학년 학력평가</li>
+      <li>7월 18일: 여름 방학식</li>
+      <li>8월 11일: 3학년 개학식</li>
+      <li>8월 12일: 1,2학년 개학식</li>
+      <li>8월 18일 ~ 8월 22일: 2학년 호주 체험학습</li>
+      <li>9월 1일: 개교기념일</li>
+      <li>9월 8일: 1학년 영어 듣기</li>
+      <li>9월 9일: 2학년 영어 듣기</li>
+      <li>9월 10일: 3학년 영어 듣기</li>
+      <li>9월 29일 ~ 10월 1일: 2학기 중간고사</li>
+      <li>10월 3일: 개천절</li>
+      <li>10월 5일 ~ 10월 7일: 추석 연휴</li>
+      <li>10월 14일: 전국 연합 평가 (1,2,3학년)</li>
+      <li>11월 13일: 수능</li>
+      <li>12월 9일 ~ 12월 12일: 2학기 기말고사</li>
+      <li>12월 31일: 겨울방학식</li>
+    </ul>
+  </div>
+</body>
+</html>
