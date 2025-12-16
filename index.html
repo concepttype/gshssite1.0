@@ -376,39 +376,69 @@ h1{
 .meal b{display:block;margin-top:4px;}
 
 .tmi-box {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px;
-  max-width: 3000px;
+  max-width: 260px;
   background: #f6fff6;
   border: 2px dashed #6cc070;
   border-radius: 14px;
-  padding: 14px 16px;   /* 살짝 여유 */
-  font-size: 13.5px;   /* ← 여기 키움 */
+  padding: 12px 14px;
+  font-size: 13.5px;
   line-height: 1.6;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  cursor: move;
+  z-index: 999;
+}
+
+.tmi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
 }
 
 .tmi-title {
   font-weight: bold;
-  font-size: 14.5px;   /* ← 제목도 같이 */
+  font-size: 14.5px;
   color: #2e7d32;
-  margin-bottom: 6px;
 }
+
+#tmiToggle {
+  border: none;
+  background: #6cc070;
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tmi-content {
+  margin-top: 8px;
+}
+
 
 
 </style>
 </head>
-<div class="tmi-box">
-  <div class="tmi-title">TMI.</div>
-  <div class="tmi-text">
-    1.올해 괴산고등학교 졸업생들은 76회 졸업생입니다.(2007년생)<br>
-    2.괴산고등학교 교장선생님은 37대 교장선생님이십니다.<br>
-    3.괴산고등학교는 2024.9.1 자율형 공립고에 선정되었습니다.<br>
-    4.과거 괴산고등학교에는 괴정제라는  축제가 있었습니다.<br>
-    5.괴산고등학교는 전경이 매우 이쁩니다.
+<div class="tmi-box" id="tmiBox">
+  <div class="tmi-header">
+    <span class="tmi-title">📌 괴산고 TMI</span>
+    <button id="tmiToggle">−</button>
+  </div>
+
+  <div class="tmi-content">
+    TmI.<br>
+    올해 괴산고등학교 졸업생들은 76회 졸업생입니다.(2007년생)<br>
+    괴산고등학교 교장선생님은 37대 교장선생님이십니다.<br>
+    괴산고등학교는 2024.9.1 자율형 공립고에 선정되었습니다.<br>
+    과거 괴산고등학교에는 괴정 제라는 축제가 있었습니다.<br>
+    괴산고등학교는 전경이 매우 이쁩니다.
   </div>
 </div>
+
 
 
 
@@ -524,6 +554,43 @@ h1{
 <div class="image-modal" id="imageModal" onclick="closeImage()">
   <img id="modalImg">
 </div>
+<script>
+  // 접기 / 펼치기
+  const toggleBtn = document.getElementById("tmiToggle");
+  const content = document.querySelector(".tmi-content");
+
+  toggleBtn.onclick = () => {
+    if (content.style.display === "none") {
+      content.style.display = "block";
+      toggleBtn.textContent = "−";
+    } else {
+      content.style.display = "none";
+      toggleBtn.textContent = "+";
+    }
+  };
+
+  // 드래그 이동
+  const box = document.getElementById("tmiBox");
+  let isDragging = false;
+  let offsetX, offsetY;
+
+  box.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    offsetX = e.clientX - box.offsetLeft;
+    offsetY = e.clientY - box.offsetTop;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      box.style.left = e.clientX - offsetX + "px";
+      box.style.top = e.clientY - offsetY + "px";
+    }
+  });
+
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
+</script>
 
 </body>
 </html>
